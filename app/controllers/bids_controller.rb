@@ -23,9 +23,9 @@ class BidsController < ApplicationController
 
   # POST /bids
   # POST /bids.json
-  def create_bid
-    binding.pry
-  end
+  # def create_bid
+  #   binding.pry
+  # end
 
   def create
     binding.pry

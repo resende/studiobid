@@ -13,8 +13,49 @@
  *= require_tree .
  *= require_self
  */
+body {
+
+  background-color: #242424; 
+}
+
+h1 {
+  color: white; 
+  float: left; 
+}
+
+.main-buttons {
+
+width: 800px; 
+height: 400px; 
+float: center;
+background-color: red;  
+margin-left: 20%; 
+
+}
+
+.space-hire {
+width: 200px;
+height: 50px;
+background-color: #242424;
+font-size: 18px;
+font-color: gray;
+border-style: solid: white;
+border-width: 5px;
+text-decoration: none;
 
 
+} 
+
+.hire-space {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  font-size: 18px;
+  font-color: gray;
+  border-style: solid: white;
+  border-width: 5px;
+
+}
  .bid-form { 
   display:none; 
   width: 500px; 
@@ -25,5 +66,5 @@
   display:none; 
   width: 500px; 
   height: 500px 
-  
+
 }

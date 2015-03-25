@@ -15,38 +15,37 @@
 //= require turbolinks
 //= require_tree .
 
-/// new bid ///
+/// new bid form ///
 
 $( document ).ready(function() {
     console.log( "ready!" );
 
-$(".new-bid" ).click(function(event) {
-  console.log( "key pressed dude");
-  $(".bid-form").css({display: "inline"});
-});
+  $(".new-bid" ).click(function(event) {
+    console.log( "key pressed dude");
+    $(".bid-form").css({display: "inline"});
+  });
 
-$(".search-button" ).click(function(event) {
-  console.log( "search box button pressed");
-});
+  $(".search-button" ).click(function(event) {
+    console.log( "search box button pressed");
+  });
 
-$(".submit-bid-button").click(function() {
-  console.log( "submit button pressed");
+  $(".submit-bid-button").click(function() {
+    console.log( "submit button pressed");
 
-var id_data = $(".submit-bid-button").data();
-var price_data = $("#new-bid-amount").val();
+      var id_data = $(".submit-bid-button").data();
+      var price_data = $("#new-bid-amount").val();
 
-var bid_data = [id_data, price_data]  
-  console.log(bid_data);
+      var bid_data = [id_data, price_data]  
+        console.log(bid_data);
 
-$.ajax({
-  url: '/create_bid',  
-  method: 'PUT',
-  dataType: 'json',
-  data: bid_data 
-})
+      $.ajax({
+        url: '/bids',  
+        method: 'GET',
+        dataType: 'json',
+        data: bid_data 
+      })
 
-});
-
+  });
 
     
 });

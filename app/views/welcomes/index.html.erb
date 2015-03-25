@@ -13,13 +13,14 @@
     <% end %>
      
      <br>
-
+<div class="main-buttons">
     <button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %></button>
  
       <% if user_signed_in? %> 
     <button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %></button>
       <% else %> 
     <button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button>
+</div>
 
   <% end %> 
 </div>
