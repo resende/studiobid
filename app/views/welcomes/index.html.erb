@@ -1,0 +1,30 @@
+<h1> STUDIO BID </h1> 
+
+<div class='login'>
+
+  <% if current_user %>
+      <%= current_user.email %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <br> 
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <br> 
+      <%= link_to "Register", new_user_registration_path %>
+    <% end %>
+     
+     <br>
+
+    <button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %></button>
+ 
+      <% if user_signed_in? %> 
+    <button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %></button>
+      <% else %> 
+    <button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button>
+
+  <% end %> 
+</div>
+ <br> 
+<button class="about-button"> <%= link_to 'About' %></button>
+<button class="search-button"><%= link_to 'Search' %></button>
+
+

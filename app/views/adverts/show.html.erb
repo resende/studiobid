@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advert.name %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @advert.sector %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @advert.address %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @advert.postcode %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @advert.size %>
+</p>
+
+<p>
+  <strong>Facilities:</strong>
+  <%= @advert.facilities %>
+</p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @advert.seller_id %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @advert.date_time %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @advert.availability %>
+</p>
+
+<!-- need to add bid new form into bid form div -->
+<div class='bid-form'>
+  <input type="number" id="new-bid-amount" placeholder="Enter bid...">
+  <button class="submit-bid-button"data-advert-id=<%= @advert.id %>>Submit Bid</button>
+</div>
+<!-- if advert.user_id is same as current_user id redirect as you can't bid on your own advert -->
+
+<% if user_signed_in? %> 
+   <button class="new-bid">Make an offer</button>
+<% else %> 
+  <button><%= link_to 'Make an offer', new_user_session_path %></button>
+<% end %> 
+ <button><%= link_to 'Back', adverts_path %></button> 
