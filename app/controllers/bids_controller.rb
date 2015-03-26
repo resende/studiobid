@@ -28,8 +28,8 @@ class BidsController < ApplicationController
   # end
 
   def create
-    binding.pry
-    @bid = Bid.new(bid_params)
+    # binding.pry
+    @bid = Bid.create(bid_params)
 
     respond_to do |format|
       if @bid.save

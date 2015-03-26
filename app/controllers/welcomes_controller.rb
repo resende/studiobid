@@ -1,6 +1,10 @@
 class WelcomesController < ApplicationController
 
-  def index
-  end
+def dashboard 
+ @adverts = Advert.all 
+ @bids = Bid.all 
+ @users = User.all 
+end
+
 
 end 

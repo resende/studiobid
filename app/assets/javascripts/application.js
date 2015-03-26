@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
 
@@ -32,17 +33,18 @@ $( document ).ready(function() {
   $(".submit-bid-button").click(function() {
     console.log( "submit button pressed");
 
-      var id_data = $(".submit-bid-button").data();
+      var id_data = $(".submit-bid-button").data("advert-id");
       var price_data = $("#new-bid-amount").val();
-
+console.log(id_data); 
       var bid_data = [id_data, price_data]  
         console.log(bid_data);
 
       $.ajax({
         url: '/bids',  
-        method: 'GET',
+        method: 'POST',
         dataType: 'json',
-        data: bid_data 
+        data: {bid: {amount: price_data, advert_id: id_data}} 
+
       })
 
   });

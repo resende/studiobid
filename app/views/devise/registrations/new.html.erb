@@ -1,3 +1,5 @@
+<div class='registration-form'>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -19,8 +21,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
+    <% f.label :role %> <b>Do you need studio space, or want to hire your?</b> <br />
+    <%= f.select :role, options_for_select(['select','seller', 'buyer']) %>
   </div>
 
 
@@ -49,3 +51,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

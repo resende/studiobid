@@ -13,12 +13,63 @@
  *= require_tree .
  *= require_self
  */
-body {
+ * {
 
-  background-color: #242424; 
-}
+font-family: helvetica; 
+
+ }
 
 h1 {
+
+  text-align: center;
+
+}
+
+h2 {
+
+  text-align: center;
+
+}
+
+button {
+
+  text-align: center
+
+}
+
+p {
+
+  text-align: center;
+
+}
+
+ .registration-form {
+
+  text-align: center;
+
+/*  background-color: #242424; */
+}
+
+.login {
+
+  text-align: center;
+
+}
+
+
+.about-button {
+
+  text-align: center;
+  color: black; 
+
+}
+
+.search-button {
+
+  text-align: center;
+
+}
+/*h1 {
   color: white; 
   float: left; 
 }
@@ -55,7 +106,7 @@ text-decoration: none;
   border-style: solid: white;
   border-width: 5px;
 
-}
+}*/
  .bid-form { 
   display:none; 
   width: 500px; 

@@ -1,9 +1,19 @@
 <h1> User Dashboard </h1> 
-<!-- current user show  -->
+
+<!-- welcome @user.name -->
+
+<h3>My Details</h3>
+<!-- user each loop -->
 
 
-<% @adverts.each do |advert| %>
+<!-- if user is a seller -->
+<h3> My Adverts </h3>
 
-<% end %> 
+<!-- if user is a buyer -->
+<h3>My bids</h3>
+
+<%= link_to "Log out", destroy_user_session_path, method: :delete %> 
+<%= link_to 'New Advert', new_advert_path %>
+
 
 
