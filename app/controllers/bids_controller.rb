@@ -19,6 +19,7 @@ class BidsController < ApplicationController
 
   # GET /bids/1/edit
   def edit
+    @bid = Bid.find(params[:id])
   end
 
   # POST /bids
@@ -30,7 +31,8 @@ class BidsController < ApplicationController
   def create
     # binding.pry
     @bid = Bid.create(bid_params)
-
+    @bid.status = 'pending'
+    @bid.save 
     respond_to do |format|
       if @bid.save
         format.html { redirect_to @bid, notice: 'Bid was successfully created.' }

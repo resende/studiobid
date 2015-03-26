@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-<!-- need to add advert to bid  -->
+
   <div class="field">
     <%= f.label :advert_id %><br>
     <%= f.number_field :advert_id %>
@@ -19,14 +19,14 @@
     <%= f.label :client_id %><br>
     <%= f.hidden_field :client_id, value: current_user.id %>
   </div>
-<!--   <div class="field">
+<div class="field">
     <%= f.label :date_time %><br>
     <%= f.datetime_select :date_time %>
-  </div> -->
- <!--  <div class="field">
+  </div>
+ <div class="field">
     <%= f.label :status %><br>
     <%= f.text_field :status %>
-  </div> -->
+  </div>
   <div class="field">
     <%= f.label :amount %><br>
     <%= f.number_field :amount %>

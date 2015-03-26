@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :users 
   resources :bids
 
+root 'welcomes#index'
+
 get 'welcomes/about', :to => 'welcomes#about'
 get 'welcomes/search', :to => 'welcomes#search'
-get '/dashboard', to: 'welcomes#dashboard'
+get 'welcomes/dashboard', to: 'welcomes#dashboard'
 match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
   # post '/create_bid' => 'bids#create_bid', :as => 'create_bid'
 
@@ -14,7 +16,7 @@ match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcomes#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
