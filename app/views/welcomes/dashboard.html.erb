@@ -6,14 +6,24 @@
 <!-- user each loop -->
 
 
+
 <!-- if user is a seller -->
 <h3> My Adverts </h3>
+
+<%= link_to 'New Advert', new_advert_path %>
+<br>
+<%= link_to 'View Adverts', adverts_path %> 
 
 <!-- if user is a buyer -->
 <h3>My bids</h3>
 
+<%= link_to 'View My Bids', bids_path %> 
+
+
+
 <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
-<%= link_to 'New Advert', new_advert_path %>
+
+
 
 
 
