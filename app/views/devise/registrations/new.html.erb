@@ -21,7 +21,7 @@
   </div>
 
   <div class="field">
-    <% f.label :role %> <b>Do you need studio space, or want to hire your?</b> <br />
+    <% f.label :role %> <b>Do you need studio space, or want to hire yours?</b> <br />
     <%= f.select :role, options_for_select(['select','seller', 'buyer']) %>
   </div>
 
@@ -50,5 +50,9 @@
   </div>
 <% end %>
 
+
+
 <%= render "devise/shared/links" %>
+<%= link_to 'Have a look around', adverts_path %>
 </div>
+

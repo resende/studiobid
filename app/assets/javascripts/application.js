@@ -36,7 +36,7 @@ $( document ).ready(function() {
       var id_data = $(".submit-bid-button").data("advert-id");
       var price_data = $("#new-bid-amount").val();
 
-console.log(id_data); 
+      console.log(id_data); 
       var bid_data = [id_data, price_data]  
         console.log(bid_data);
 

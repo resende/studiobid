@@ -4,16 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   
-  def index
-    if user_signed_in?
-      render "dashboard"
-    else
-      render "index"
-    end
-  end 
+  # def index
+  #   if user_signed_in?
+  #     render "welcomes/dashboard"
+  #   else
+  #     render "index"
+  #   end
+  # end 
 
-  def dashboard
-  end
+  
  after_filter :store_location
 
  def store_location

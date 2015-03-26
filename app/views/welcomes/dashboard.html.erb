@@ -1,8 +1,22 @@
 <h1> User Dashboard </h1> 
 
 
+<button class="back-button"> <%= link_to 'New Advert', new_advert_path  %></button>
 
-
-<button class"home"><%= link_to "Home", root_path %> </button>
+<button class="back-button"> <%= link_to 'View Adverts', adverts_path  %></button>
+<button class="back-button"> <%= link_to 'Search', welcomes_search_path  %></button>
 <button class"logout"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+
+<% @current_user_adverts.each do |advert| %>
+  <ul><%= advert.name %></ul>
+
+  <% advert.bids.each do |bid| %>
+    <li>Bid: £<%=bid.amount %></li>
+    <li>Date made: <%= advert.created_at.to_formatted_s(:short) %></li>
+    <br> 
+  <% end %>
+<% end %>
+
+<%= @users %>
+<%= @adverts %>
 
