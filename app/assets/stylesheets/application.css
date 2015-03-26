@@ -48,11 +48,26 @@ div {
   text-align: center;
 
 }
+
+.bid-select {
+  list-style: none;
+  text-align: center;
+
+}
+
  .registration-form {
 
   text-align: center;
 
+
 /*  background-color: #242424; */
+}
+
+.idv-bid {
+
+list-style: none;
+text-align: center;
+
 }
 
 .login {

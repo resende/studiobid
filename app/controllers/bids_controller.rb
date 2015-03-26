@@ -47,6 +47,7 @@ class BidsController < ApplicationController
   # PATCH/PUT /bids/1
   # PATCH/PUT /bids/1.json
   def update
+    @bid = Bid.find(params[:id])
     respond_to do |format|
       if @bid.update(bid_params)
         format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
@@ -61,6 +62,7 @@ class BidsController < ApplicationController
   # DELETE /bids/1
   # DELETE /bids/1.json
   def destroy
+    @bid = Bid.find(params[:id])
     @bid.destroy
     respond_to do |format|
       format.html { redirect_to bids_url, notice: 'Bid was successfully destroyed.' }

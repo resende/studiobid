@@ -18,21 +18,7 @@
 
 /// new bid form ///
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-
-  $(".new-bid" ).click(function(event) {
-    console.log( "key pressed dude");
-    $(".bid-form").css({display: "inline"});
-  });
-
-  $(".search-button" ).click(function(event) {
-    console.log( "search box button pressed");
-  });
-
-  $(".submit-bid-button").click(function() {
-    console.log( "submit button pressed");
-
+    submitBid = function(){
       var id_data = $(".submit-bid-button").data("advert-id");
       var price_data = $("#new-bid-amount").val();
 
@@ -47,8 +33,63 @@ $( document ).ready(function() {
         data: {bid: {amount: price_data, advert_id: id_data}} 
 
       })
+    }
 
-  });
+    acceptBid = function(id){
+      console.log(id); 
+      $.ajax({
+        url: '/bids/' + id, 
+        method: 'PUT',
+        dataType: 'json',
+        data: {bid: {status: 'accepted'}} 
 
-    
-});
+      }).success(function(data){
+        console.log(data); 
+      })  
+    }
+
+    rejectBid = function(id){
+      console.log(id); 
+      $.ajax({
+        url: '/bids/' + id, 
+        method: 'PUT',
+        dataType: 'json',
+        data: {bid: {status: 'rejected'}} 
+
+      }).success(function(data){
+        console.log(data); 
+      })  
+    }
+
+
+
+        $( document ).ready(function() {
+
+          $(".new-bid" ).click(function(event) {
+            console.log( "key pressed dude");
+            $(".bid-form").css({display: "inline"});
+          });
+
+          $(".search-button" ).click(function(event) {
+            console.log( "search box button pressed");
+          });
+
+          $(".submit-bid-button").click(function() {
+            console.log( "submit button pressed");
+            submitBid()
+          })
+
+            $(".accept" ).click(function(event) {
+              console.log($(this).data("id"));
+              acceptBid($(this).data("id"));
+          
+          });
+
+            $(".reject" ).click(function(event) {
+              console.log($(this).data("id"));
+              rejectBid($(this).data("id"));
+          
+          });  
+
+
+        });
