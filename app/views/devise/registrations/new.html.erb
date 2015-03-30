@@ -23,9 +23,13 @@
   <div class="field">
     <% f.label :role %> <b>Do you need studio space, or want to hire yours?</b> <br />
     <%= f.select :role, options_for_select(['select','seller', 'buyer']) %>
+ </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
   </div>
-
-
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

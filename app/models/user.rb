@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-   
+ 
+ mount_uploader :avatar, AvatarUploader  
+
  has_many :adverts, through: :bids 
  has_many :adverts 
  has_many :bids 

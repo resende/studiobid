@@ -57,6 +57,16 @@ div {
 
 }
 
+ul {
+
+  list-style: none; 
+}
+
+
+.about-buttons {
+
+ 
+}
 /*/// homepage styling ///*/
 
 .main-title {
@@ -188,11 +198,12 @@ div {
 
 .ad-box {
 
-width: 500px; 
-height: 500px; 
+width: 250px; 
+height: 250px; 
 border: 1.5px solid black;
-text-align: center; 
-margin-left: 50px;  
+float: center; 
+margin: 30px; 
+
 }
 
 .user-box {
