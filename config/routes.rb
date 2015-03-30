@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :adverts
   resources :users 
   resources :bids
-
-
 
   get 'welcomes/about', :to => 'welcomes#about'
   get 'welcomes/search', :to => 'welcomes#search'
   get 'welcomes/dashboard', :to => 'welcomes#dashboard'
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
+
   # post '/create_bid' => 'bids#create_bid', :as => 'create_bid'
 
   # The priority is based upon order of creation: first created -> highest priority.

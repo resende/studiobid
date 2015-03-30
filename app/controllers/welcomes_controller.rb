@@ -11,7 +11,7 @@ class WelcomesController < ApplicationController
 
   def dashboard 
     # binding.pry
-    @users = User.all
+    @users = current_user.id
     @current_user_adverts = Advert.where(seller_id: current_user.id)
     @current_user_bids = Bid.where(client_id: current_user.id )
   end

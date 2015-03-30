@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
+/// modal sign in form ///
+
 /// new bid form ///
 
     submitBid = function(){
