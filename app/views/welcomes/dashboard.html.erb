@@ -1,26 +1,36 @@
-<h1> User Dashboard </h1> 
+<h1> My Dashboard </h1> 
 
+<div class="buttons-box">
+  <button class="back-button"> <%= link_to 'New Advert', new_advert_path  %></button>
+  <button class="back-button"> <%= link_to 'View Adverts', adverts_path  %></button>
+  <button class="back-button"> <%= link_to 'Search', welcomes_search_path  %></button>
+  <button class"logout"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+</div>
 
-<button class="back-button"> <%= link_to 'New Advert', new_advert_path  %></button>
+<div class="user-box">
+<ul> My Details</ul>
+  <%= @users.each do |user| %>
+  <li><%= %></li>
+  <li><%=  %></li>
 
-<button class="back-button"> <%= link_to 'View Adverts', adverts_path  %></button>
-<button class="back-button"> <%= link_to 'Search', welcomes_search_path  %></button>
-<button class"logout"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+<% end %> 
+  </div>
+<!--   <div class="adverts-box">
+  <%= @adverts %>
+</div> -->
 
-
-
-<% @current_user_adverts.each do |advert| %>
-  <ul class="bid-select">My Bids</ul>
-
-  <li><%= advert.name %></ul></li>
-  <% advert.bids.each do |bid| %>
-  <li class="idv-bid">Bid: £<%=bid.amount %></li>
-  <button class="accept" data-id=<%= bid.id %>>Accept</button>
-  <button class="reject" data-id=<%= bid.id %>>Reject</button>
-  <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
+<div class="bids-box">
+  <% @current_user_adverts.each do |advert| %>
+  <ul class="bid-select">My Offers</ul>
+    <li><strong><%= advert.name %></strong></ul></li>
+    <% advert.bids.each do |bid| %>
+    <li class="idv-bid">Bid: £<%=bid.amount %></li>
+    <button class="accept" data-id=<%= bid.id %>>Accept</button>
+    <button class="reject" data-id=<%= bid.id %>>Reject</button>
+    <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
   <% end %>
-<% end %>
+  <% end %>
+</div>
 
-<%= @users %>
-<%= @adverts %>
+
 

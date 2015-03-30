@@ -16,9 +16,16 @@
  * {
 
 font-family: helvetica; 
+/*background-color: #d3d3d3; */
 
  }
-
+/*
+ body {
+  display:none; 
+  background-color: black;
+  
+ }
+*/
 h1 {
 
   text-align: center;
