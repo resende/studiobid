@@ -2,11 +2,11 @@
 <h1> Welcome <%= current_user.name %> </h1> 
 
 <div class="buttons-box">
-  <button class="back-button"> <%= link_to 'New Advert', new_advert_path  %></button>
-  <button class="back-button"> <%= link_to 'View Adverts', adverts_path  %></button>
-  <button class="back-button"> <%= link_to 'Search', welcomes_search_path  %></button>
-  <button class"logout"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
-  <button class"back-button"><%= link_to 'Edit my Details', edit_user_registration_path %></button> 
+  <button class="standard-button"><%= link_to 'New Advert', new_advert_path  %></button>
+  <button class="standard-button"><%= link_to 'View Adverts', adverts_path  %></button>
+  <button class="standard-button"><%= link_to 'Search', welcomes_search_path %></button>
+  <button class="standard-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
+  <button class="standard-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
 </div>
 
 <div class="user-box">

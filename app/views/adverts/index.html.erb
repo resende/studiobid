@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Adverts</h1>
-<button class="back-button"> <%= link_to 'Home', root_path  %></button>
+<button class="standard-button"> <%= link_to 'Home', root_path  %></button>
 
-    <% @adverts.each do |advert| %>
-    <dialog id="myDialog">This is a dialog window</dialog>
-        <p><%= advert.name %></p>
-        <p><%= advert.sector %></p>
-        <p><%= advert.address %></p>
-        <p><%= advert.postcode %></p>
-        <p><%= advert.size %></p>
-        <p><%= advert.facilities %></p>
-        <p><%= advert.seller_id %></p>
-        <p><%= advert.date_time %></p>
-        <p><%= advert.availability %></p>
-        
-     <button class="advert-info"><%= link_to 'More Info', advert %></button>
-      
-      <p><%= link_to 'Edit', edit_advert_path(advert) %></p>
-        
-      <p><%= link_to 'Destroy', advert, method: :delete, data: 
-      { confirm: 'Are you sure?' } %></p>
-  
-    <% end %>
+<% @adverts.each do |advert| %>
 
+<div class="ad-box">
+    <ul class="listings">
+    <li><%= advert.name %></li>
+    <li><%= advert.sector %></li>
+    <li><%= advert.address %></li>
+    <li><%= advert.postcode %></li>
+    <li><%= advert.size %></li>
+    <li><%= advert.facilities %></li>
+    <li><%= advert.seller_id %></li>
+    <li><%= advert.date_time %></li>
+    <li><%= advert.availability %></li>
+    </ul>   
+    <button class="advert-info"><%= link_to 'More Info', advert %></button>
+    <% end %>  
+</div>
 
 
 <% link_to 'New Advert', new_advert_path %>

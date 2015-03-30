@@ -16,7 +16,8 @@
  * {
 
 font-family: helvetica; 
-/*background-color: #d3d3d3; */
+font-color: white;
+color: black; 
 
  }
 /*
@@ -56,6 +57,184 @@ div {
 
 }
 
+/*/// homepage styling ///*/
+
+.main-title {
+
+  padding-top: 20px;
+  z-index: 999; 
+  font-weight: lighter; 
+  font-size: 32px; 
+  margin-top: 0px; 
+}
+
+.hire-space {
+  width: 250px;
+  height: 80px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 20px; 
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  
+ 
+} 
+
+.space-hire {
+   width: 250px;
+   height: 80px;
+   border: 1.5px solid black;
+   background-color: white; 
+   font-size: 20px; 
+   padding: 10px;
+   margin: 10px; 
+   text-decoration: none;
+   color: white; 
+}
+
+.about-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 16px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+
+}
+
+.search-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 16px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+}
+
+.sign-in-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 16px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+}
+
+.register-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 16px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+}
+
+/*////Dashborad styling////*/
+
+.standard-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 12px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+}
+
+
+
+.advert-info {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: white; 
+  font-size: 12px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  color: white; 
+  display: inline-block;
+  list-style: none; 
+  float: center; 
+  margin-left: 50px; 
+
+
+}
+
+.ad-box {
+
+width: 500px; 
+height: 500px; 
+border: 1.5px solid black;
+text-align: center; 
+margin-left: 50px;  
+}
+
+.user-box {
+  width: 400px; 
+  height: 150px; 
+  border: 1.5px solid black;
+  text-align: center;
+  margin-left: 50px; 
+  margin-bottom: 10px;  
+
+}
+
+.offers-box {
+  width: 400px; 
+  height: 500px; 
+  border: 1.5px solid black;
+  text-align: center; 
+  float: right;
+  margin-right: 50px;  
+
+}
+
+.adverts-box {
+  width: 400px; 
+  height: 500px; 
+  border: 1.5px solid black;
+  text-align: center; 
+  margin-left: 350px;  
+
+}
+
+.bids-box {
+  width: 400px; 
+  height: 500px; 
+  border: 1.5px solid black;
+  text-align: center; 
+
+}
+
+/*///////*/
+
+
 .bid-select {
   list-style: none;
   text-align: center;
@@ -77,11 +256,11 @@ text-align: center;
 
 }
 
-.login {
+/*.login {
 
   text-align: center;
 
-}
+}*/
 
 .logout {
 

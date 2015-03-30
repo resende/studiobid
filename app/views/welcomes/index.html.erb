@@ -1,32 +1,31 @@
 
-<h1> STUDIO BID </h1>
+<h1 class="main-title"><%= link_to 'Studio bid', root_path %></h1>
 
-<div class='login'>
 
+<ul class="menu-options">
   <% if current_user %>
-      <%= current_user.email %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <br> 
-    <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <br> 
-      <%= link_to "Register", new_user_registration_path %>
+   <%= current_user.email %>
+   <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
+   <% else %>
+    <li><button class="sign-in-button"><%= link_to "Sign In", new_user_session_path %></button></li>
+      <li><button class="register-button"><%= link_to "Register", new_user_registration_path %></button></li>
     <% end %>
-     
-     <br>
+     <li><button class="about-button"> <%= link_to 'About', welcomes_about_path %></button></li>
+     <li><button class="search-button"><%= link_to 'Search', welcomes_search_path %></button></li>
+</ul>
+
+
+
 <div class="main-buttons">
-    <button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %></button>
- 
-      <% if user_signed_in? %> 
-    <button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %></button>
-      <% else %> 
+    <button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %>
+    </button>
+    <% if user_signed_in? %> 
+    <button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %>
+    </button>
+    <% else %> 
     <button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button>
+    <% end %> 
 </div>
 
-  <% end %> 
-</div>
- <br> 
-<button class="about-button"> <%= link_to 'About', welcomes_about_path %></button>
-<button class="search-button"><%= link_to 'Search', welcomes_search_path %></button>
-
+ 
 
