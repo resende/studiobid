@@ -13,9 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*navbar*/
+
+/*main page*/
+
+
+
  * {
 
-font-family: helvetica; 
+font-family: 'Noto Sans', sans-serif;
 font-color: white;
 color: black; 
 
@@ -23,11 +31,52 @@ color: black;
 
 body {
 
-height: 1000px; 
-/*background-color: #ededed; */
+background-image: url(production-lighting.jpg);
+background-size: 100% 100%;
+display: none; 
+
+}
+
+.main-title a {  
+ margin-left: 10px; 
+ float: left; 
+ font-size: 22px; 
+ color: #cecece; 
+}
+
+
+footer {
+
+width: 100%; 
+height: 10px; 
+background-color: black; 
 
 
 }
+/*forms*/
+
+.field {
+  text-align: center; 
+  font-size: 12px;
+  color: black;  
+}
+
+.registration-form {
+
+width: 300px;
+height: 600px;
+border: 3px solid black;
+
+}
+
+.new-session {
+
+width: 300px;
+height: 300px;
+border: 3px solid black;
+
+}
+
 
 /*main page */
 
@@ -36,12 +85,6 @@ height: 250px;
 /*background-color: #212121; */
 }
 
-.main-title a {  
-   /*position: fixed;*/
-/*   float: center; */
-   font-size: 72px; 
-/*   color: white; */
-}
 
 .sign-in-button  {
   width: 40px; 
@@ -75,6 +118,10 @@ position: fixed;
 
 }
 
+a {
+text-decoration: none; 
+
+}
 
 h1 {
 text-align: center;
@@ -132,7 +179,7 @@ ul {
 .hire-space {
   width: 250px;
   height: 80px;
-  border: 3px solid black;
+  border: 5px solid white;
   /*background-color: white; */
   font-size: 20px; 
   padding: 10px;
@@ -145,7 +192,7 @@ ul {
 .space-hire {
    width: 250px;
    height: 80px;
-   border: 3px solid black;
+   border: 5px solid white;
    /*background-color: white; */
    font-size: 20px; 
    padding: 10px;
@@ -154,6 +201,7 @@ ul {
    color: white; 
    background: transparent;
 }
+
 
 .about-button {
   width: 100px;
@@ -307,31 +355,54 @@ margin: 30px;
 
 }*/
 
-.box {
-  box-sizing: border-box;
-  float: left;
-  width: 50%;
-  height: 20%;
-/*  border: 1px solid black;*/
+.bid-box {
+
+width: 300px;
+height: 120px;
+background-color: #E5E4E2; 
+list-style: none; 
+border: 1.5px solid black;
+margin: 10px; 
+/*box-shadow: -3px 3px 0px 0px rgba(193, 27, 23);*/
+display: inline-table; 
+font-family: helvetica; 
 }
 
+.dashboard-title {
+ width: 300px;
+ height: 50px;
+ background-color: #E5E4E2; 
+ list-style: none; 
+ border: 1.5px solid black;
+ margin: 10px; 
+/* box-shadow solid-shadow: -3px 3px 0px 0px rgba(193, 27, 23);*/
+float: center;
+display: inline-table; 
 
-.box:first-child {
-/*  border-bottom: 1px solid black;
-  border-right: 1px solid black;*/
-  background-color: red; 
-}
-.box:nth-child(2) {
-/*  border-bottom: 1px solid black;*/
-  background-color: blue; 
-}
-.box:nth-child(3) {
- /* border-right: 1px solid black;*/
-  background-color: pink; 
 }
 
+.dashboard-main {
 
+width: 100%; 
+height: 100%; 
+/*background-color: #E5E4E2; */
+padding: 20px; 
+margin-top: -10px; 
+}
 
+.dash-button {
+  width: 100px;
+  height: 40px;
+  border: 1.5px solid black;
+  background-color: #E5E4E2; 
+  font-size: 12px; 
+  padding: 10px;
+  margin: 10px; 
+  text-decoration: none;
+  display: inline-block;
+  list-style: none; 
+  color: black; 
+}
 /*///////*/
 
 
@@ -377,6 +448,15 @@ text-align: center;
   text-align: center;
 
 }
+
+.menu-options {
+
+list-style: none; 
+
+
+}
+
+
 /*h1 {
   color: white; 
   float: left; 
@@ -428,7 +508,21 @@ text-decoration: none;
 
 }
 
+.ad-box {
 
+  width: 500px;
+  height: 500px;
+  background-color: #E5E4E2; 
+  list-style: none; 
+  border: 1.5px solid black;
+  margin: 10px; 
+  /*box-shadow: -3px 3px 0px 0px rgba(193, 27, 23);*/
+/*  display: inline-table; */
+  font-family: helvetica; 
+
+
+
+}
 /*modal sing in */
 
 /*advert modal */

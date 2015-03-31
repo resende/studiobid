@@ -21,6 +21,12 @@
 
 /// new bid form ///
 
+$(document).ready(function() {
+     $("body").css("display", "none");
+     $("body").fadeIn(500);
+ });
+
+
 submitBid = function(advertId, amount) {
 
   window.alert("Bid Made");
@@ -121,5 +127,8 @@ $(document).ready(function() {
     console.log("button clicked!")
   });  
 
+
+
+  
 
 });

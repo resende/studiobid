@@ -1,26 +1,26 @@
-<h3>Dashboard</h3>
+<div class="dashboard-main">
+<div class="dashboard-title">
 <h4> welcome <%= current_user.name %> </h4> 
-
-
-
-<div class="box">
-  <h3>details</h3>
-   <% @current_user.name %>
-   <br> 
-   <% @current_user.email %>
-   <button class="standard-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
-   <button class="standard-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
-  <button class="standard-button"><%= link_to 'Search', welcomes_search_path %></button>
-  <button class="standard-button"><%= link_to 'View Adverts', adverts_path  %></button>
-  <button class="standard-button"><%= link_to 'New Advert', new_advert_path  %></button>
-  <button class="standard-button"><%= link_to 'tbc', new_advert_path  %></button>
 </div>
 
 
 <div class="box">
- <h3>my adverts</h3>
+
+   <% @current_user.name %>
+   <br> 
+   <% @current_user.email %>
+   <button class="dash-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
+   <button class="dash-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+  <button class="dash-button"><%= link_to 'Search', welcomes_search_path %></button>
+  <button class="dash-button"><%= link_to 'View Adverts', adverts_path  %></button>
+  <button class="dash-button"><%= link_to 'New Advert', new_advert_path  %></button>
+  <button class="dash-button"><%= link_to 'tbc', new_advert_path  %></button>
+</div>
+
   <% @current_user_adverts.each do |advert| %>
+  <div class="bid-box">
   <ul class="bid-select"></ul>
+    <li>NEW BID</li>
     <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
     <li><% advert.bids.each do |bid| %>
     <li class="idv-bid">Bid: £<%=bid.amount %></li>
@@ -28,19 +28,15 @@
     <button class="reject" data-id=<%= bid.id %>>Reject</button>
     <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
   <% end %>
+  </div>
   <% end %>
 </div>
 
-<!-- <div class="box"> -->
-<!--   <h3> tbc</h3> -->
-
- 
-</div>
-
-<div class="box">
+<!-- <div class="box">
   <h3>my bids</h3>
   <br>
   <p><% @current_user_bids.each do |bid| %></p>
   <p><%  %></p>
   <% end %>
 </div>
+</div> -->
