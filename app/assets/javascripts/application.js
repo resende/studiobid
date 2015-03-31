@@ -21,90 +21,99 @@
 
 /// new bid form ///
 
-    submitBid = function(){
-          var id_data = $(".submit-bid-button").data("advert-id");
-          var price_data = $("#new-bid-amount").val();
+submitBid = function(){
+  var id_data = $(".submit-bid-button").data("advert-id");
+  var price_data = $("#new-bid-amount").val();
 
-          console.log(id_data); 
-          var bid_data = [id_data, price_data]  
-            console.log(bid_data);
+  console.log(id_data); 
+  var bid_data = [id_data, price_data]  
+  console.log(bid_data);
 
-         window.alert("Bid Made");
-            
-          $.ajax({
-            url: '/bids',  
-            method: 'POST',
-            dataType: 'json',
-            data: {bid: {amount: price_data, advert_id: id_data}} 
+  window.alert("Bid Made");
 
-          })
-        }
+  $.ajax({
+    url: '/bids',  
+    method: 'POST',
+    dataType: 'json',
+    data: {bid: {amount: price_data, advert_id: id_data}} 
 
-        acceptBid = function(id){
-          console.log(id); 
-          $.ajax({
-            url: '/bids/' + id, 
-            method: 'PUT',
-            dataType: 'json',
-            data: {bid: {status: 'accepted'}} 
+  })
+}
 
-          }).success(function(data){
-            console.log(data); 
-          })
-          window.alert("Bid Accepted");  
-        }
+acceptBid = function(id){
+  console.log(id); 
+  $.ajax({
+    url: '/bids/' + id, 
+    method: 'PUT',
+    dataType: 'json',
+    data: {bid: {status: 'accepted'}} 
 
-        rejectBid = function(id){
-          console.log(id); 
-          $.ajax({
-            url: '/bids/' + id, 
-            method: 'PUT',
-            dataType: 'json',
-            data: {bid: {status: 'rejected'}} 
+  }).success(function(data){
+    console.log(data); 
+  })
+  window.alert("Bid Accepted");  
+}
 
-          }).success(function(data){
-            console.log(data); 
-          })  
-          window.alert("Bid Rejected");
-        }
+rejectBid = function(id){
+  console.log(id); 
+  $.ajax({
+    url: '/bids/' + id, 
+    method: 'PUT',
+    dataType: 'json',
+    data: {bid: {status: 'rejected'}} 
+
+  }).success(function(data){
+    console.log(data); 
+  })  
+  window.alert("Bid Rejected");
+}
 
 
 
-            $( document ).ready(function() {
+$( document ).ready(function() {
 
-              $(".new-bid" ).click(function(event) {
-                console.log( "key pressed dude");
-                $(".bid-form").css({display: "inline"});
-              });
+  $(".new-bid" ).click(function(event) {
+    console.log( "key pressed dude");
+    $(".bid-form").css({display: "inline"});
+  });
 
-              $(".search-button" ).click(function(event) {
-                console.log( "search box button pressed");
-              });
+  $(".search-button" ).click(function(event) {
+    console.log( "search box button pressed");
+  });
 
-              $(".submit-bid-button").click(function() {
-                console.log( "submit button pressed");
-                submitBid()
-                  $(".bid-form").css({display: "none"});
+  $(".submit-bid-button").click(function() {
+    console.log( "submit button pressed");
+    submitBid()
+    $(".bid-form").css({display: "none"});
+  })
 
-    
-              })
+  $('body').on('blur','#new-bid-amount', function(){
+    var $this = $('#new-bid-amount')
+    console.log($this.val())
+    if ($this.val() > 0) {
+      //do something
+      $('.submit-bid-button').removeClass('disabled')
+    } else{
+      $(".submit-bid-button").addClass('disabled')
+    };
+  })
 
-                $(".accept" ).click(function(event) {
-                  console.log($(this).data("id"));
-                  acceptBid($(this).data("id"));
-              
-              });
+  $(".accept" ).click(function(event) {
+    console.log($(this).data("id"));
+    acceptBid($(this).data("id"));
 
-                $(".reject" ).click(function(event) {
-                  console.log($(this).data("id"));
-                  rejectBid($(this).data("id"));
-              
-              });  
-                
-                $(".advert-info").click(function(e) { 
-                    e.preventDefault();
-                    console.log("button clicked!")
-                });  
-                
+  });
 
-            });
+  $(".reject" ).click(function(event) {
+    console.log($(this).data("id"));
+    rejectBid($(this).data("id"));
+
+  });  
+
+  $(".advert-info").click(function(e) { 
+    e.preventDefault();
+    console.log("button clicked!")
+  });  
+
+
+});
