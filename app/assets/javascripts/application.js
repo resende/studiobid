@@ -16,7 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
-/// modal sign in form ///
+/// modal view advert ///
+
 
 /// new bid form ///
 

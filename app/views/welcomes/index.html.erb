@@ -1,5 +1,5 @@
 
-<h1 class="main-title"><%= link_to 'Studio bid', root_path %></h1>
+<h1 class="main-title"><%= link_to 'studio bid', root_path %></h1>
 
 
 <ul class="menu-options">
@@ -9,9 +9,7 @@
    <% else %>
     <li><button class="sign-in-button"><%= link_to "Sign In", new_user_session_path %></button></li>
       <li><button class="register-button"><%= link_to "Register", new_user_registration_path %></button></li>
-    <% end %>
-     <li><button class="about-button"> <%= link_to 'About', welcomes_about_path %></button></li>
-     <li><button class="search-button"><%= link_to 'Search', welcomes_search_path %></button></li>
+    <% end %>   
 </ul>
 
 
@@ -27,5 +25,41 @@
     <% end %> 
 </div>
 
- 
+<!-- about modal -->
+
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">about</button>
+
+ <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      
+       <h2> how it works </h2>
+
+       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis praesentium nisi in iure perferendis, modi consequuntur aliquam alias ea ipsum debitis cupiditate maxime enim at suscipit labore consequatur, eum quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aut tenetur voluptas, ut, tempore perferendis enim harum praesentium itaque labore doloremque veniam vero dicta. Saepe dolorem nisi accusantium! Quis, provident? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio aliquid asperiores perferendis, dolore mollitia, repellendus nulla et libero nostrum at ab ad ea modi unde ducimus alias obcaecati, reprehenderit minima?</p>
+
+       <h2> star rating </h2>
+
+
+       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque accusamus, perferendis magnam beatae. Magnam, aliquid voluptate adipisci aperiam ut! Velit alias earum consequuntur recusandae ex molestiae nulla et omnis, corporis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni consequatur cumque rerum ratione omnis, ex deleniti voluptatum quas quasi minima pariatur molestiae facilis nobis asperiores labore quisquam alias! Quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis eveniet rem dolorum unde incidunt delectus minus nam dolorem inventore, voluptatibus numquam corporis dolore commodi, animi culpa enim laborum. Repudiandae, labore. </p>
+
+       <ul class="about-buttons">
+       <li><button class="standard-button"> <%= link_to 'Back', root_path  %></button></li>
+       <li><button class="standard-button"><%= link_to "Register", new_user_registration_path %></button></li>
+       </ul>
+     </div>
+   </div>
+ </div>
+
+<!-- search modal -->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">search</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    SEARCH BOX GOES HERE 
+    <button class="standard-button"> <%= link_to 'Back', root_path  %></button>
+    </div>
+  </div>
+</div>
 

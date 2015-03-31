@@ -20,13 +20,13 @@ font-color: white;
 color: black; 
 
  }
-/*
+
  body {
-  display:none; 
-  background-color: black;
-  
+
+
+/* background-color:#212121; */
  }
-*/
+
 h1 {
 
   text-align: center;
@@ -81,32 +81,33 @@ ul {
 .hire-space {
   width: 250px;
   height: 80px;
-  border: 1.5px solid black;
-  background-color: white; 
+  border: 3px solid white;
+  /*background-color: white; */
   font-size: 20px; 
+  padding: 10px;
   margin: 10px; 
   text-decoration: none;
   color: white; 
-  
- 
+  background: transparent;
 } 
 
 .space-hire {
    width: 250px;
    height: 80px;
-   border: 1.5px solid black;
-   background-color: white; 
+   border: 3px solid white;
+   /*background-color: white; */
    font-size: 20px; 
    padding: 10px;
    margin: 10px; 
    text-decoration: none;
    color: white; 
+   background: transparent;
 }
 
 .about-button {
   width: 100px;
   height: 40px;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   background-color: white; 
   font-size: 16px; 
   padding: 10px;
@@ -114,14 +115,15 @@ ul {
   text-decoration: none;
   color: white; 
   display: inline-block;
-  list-style: none; 
+  list-style: none;
+  background: transparent; 
 
 }
 
 .search-button {
   width: 100px;
   height: 40px;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   background-color: white; 
   font-size: 16px; 
   padding: 10px;
@@ -130,12 +132,13 @@ ul {
   color: white; 
   display: inline-block;
   list-style: none; 
+  background: transparent;
 }
 
 .sign-in-button {
   width: 100px;
   height: 40px;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   background-color: white; 
   font-size: 16px; 
   padding: 10px;
@@ -144,12 +147,13 @@ ul {
   color: white; 
   display: inline-block;
   list-style: none; 
+  background: transparent;
 }
 
 .register-button {
   width: 100px;
   height: 40px;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   background-color: white; 
   font-size: 16px; 
   padding: 10px;
@@ -158,6 +162,7 @@ ul {
   color: white; 
   display: inline-block;
   list-style: none; 
+  background: transparent;
 }
 
 /*////Dashborad styling////*/
@@ -165,7 +170,7 @@ ul {
 .standard-button {
   width: 100px;
   height: 40px;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   background-color: white; 
   font-size: 12px; 
   padding: 10px;
@@ -174,6 +179,7 @@ ul {
   color: white; 
   display: inline-block;
   list-style: none; 
+  background: transparent;
 }
 
 
@@ -344,3 +350,6 @@ text-decoration: none;
 
 
 /*modal sing in */
+
+/*advert modal */
+
