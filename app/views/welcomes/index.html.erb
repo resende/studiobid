@@ -1,8 +1,74 @@
+<!-- menu sidebar  -->
+
+<div id="menu-toggle">
+  <div id="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  Menu
+</div>
+<div id="menu-overlay"></div>
+<ul id="menu">
+
+  <li><a><% if current_user %>
+   <%= current_user.email %>
+   <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
+   <% else %>
+    <li><%= link_to "Sign In", new_user_session_path %></li>
+    <li><%= link_to "Register", new_user_registration_path %></li>
+    <% end %><a></li>
+  <li><class="" data-toggle="modal" data-target=".bs-example-modal-sm">Search</li>
+
+  <li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">About</a>
+    <!-- <ul>
+      <li></li> -->
+      <!-- <li><a href="#">hello.......</a></li> -->
+
+      <!-- <li><a href="#">Got kids of my own...hello???</a> -->
+ <!--        <ul>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li> -->
+    <!-- </ul> -->
+  </li>
+  <li><a href="#">Hello.........</a>
+    <ul>
+      <li><class="jeremy"><img src="jeremy.png"></li>
+    </ul>
+  </li>
+</ul>
 
 
-<h1 class="main-title"><%= link_to 'studio bid', root_path %></h1>
+<!-- Main buttons on hire or sell buttons -->
 
-<div class="main-page-buttons">
+<div id="page-content">
+<!--   <h1>studio bid....</h1> -->
+    <ul>
+      <li><button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %>
+      </button></li>
+      <% if user_signed_in? %> 
+      <li><button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %>
+      </button></li>
+      <% else %> 
+      <li><button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button></li>
+    </ul>
+    <% end %> 
+  </div>
+</div>
+
+
+
+<!-- old main page code -->
+
+<!-- <h1 class="main-title"><%= link_to 'studio bid', root_path %></h1> -->
+
+<!-- <div class="main-page-buttons">
 <ul class="menu-options">
   <% if current_user %>
    <%= current_user.email %>
@@ -10,12 +76,14 @@
    <% else %>
     <li><button class="dash-button"><%= link_to "Sign In", new_user_session_path %></button></li>
     <li><button class="dash-button"><%= link_to "Register", new_user_registration_path %></button></li>
-    <% end %>   
+    <% end %>  -->  
 
 
+<!-- about modal -->
 
+<!-- <li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">about</button></li> -->
 
-<li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">about</button></li>
+<!-- about modal -->
 
  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog modal-lg">
@@ -39,9 +107,10 @@
  
 </div>
 <!-- search modal -->
-<li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-sm">search</button></li>
+<!-- <li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-sm">search</button></li>
+ -->
 
-
+ <!-- search modal -->
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -55,7 +124,7 @@
 </div>
 
 
-
+<!-- 
   <div class="main-buttons">
     <ul>
       <li><button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %>
@@ -67,11 +136,4 @@
       <li><button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button></li>
     </ul>
     <% end %> 
-  </div>
-
-  
-  <footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptate aut distinctio libero a obcaecati quae ea quidem nesciunt, delectus, minima vero beatae expedita laudantium quas consequuntur possimus tenetur officia?</p>
-
-  </footer>
-
+  </div> -->
