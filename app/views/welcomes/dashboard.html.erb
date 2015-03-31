@@ -1,24 +1,24 @@
-<h2>USER DASHBOARD</h2>
-<h1> Welcome <%= current_user.name %> </h1> 
+<h3>Dashboard</h3>
+<h4> welcome <%= current_user.name %> </h4> 
 
-<div class="buttons-box">
-  <button class="standard-button"><%= link_to 'New Advert', new_advert_path  %></button>
-  <button class="standard-button"><%= link_to 'View Adverts', adverts_path  %></button>
-  <button class="standard-button"><%= link_to 'Search', welcomes_search_path %></button>
-  <button class="standard-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
-  <button class="standard-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
-</div>
 
-<div class="user-box">
-  <h3>My Details</h3>
-   name:<%= @current_user.name %>
+
+<div class="box">
+  <h3>details</h3>
+   <% @current_user.name %>
    <br> 
-   email:<%= @current_user.email %>
+   <% @current_user.email %>
+   <button class="standard-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
+   <button class="standard-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+  <button class="standard-button"><%= link_to 'Search', welcomes_search_path %></button>
+  <button class="standard-button"><%= link_to 'View Adverts', adverts_path  %></button>
+  <button class="standard-button"><%= link_to 'New Advert', new_advert_path  %></button>
+  <button class="standard-button"><%= link_to 'tbc', new_advert_path  %></button>
 </div>
 
 
-<div class="offers-box">
- <h3>My Offers</h3>
+<div class="box">
+ <h3>my adverts</h3>
   <% @current_user_adverts.each do |advert| %>
   <ul class="bid-select"></ul>
     <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
@@ -31,13 +31,16 @@
   <% end %>
 </div>
 
-<div class="adverts-box">
-  <h3>My Adverts</h3>
-  <%=%>
+<!-- <div class="box"> -->
+<!--   <h3> tbc</h3> -->
+
+ 
 </div>
 
-<div class="bids-box">
-  <h3>My Bids</h3>
-  <% @current_user_bids.each do |bid| %>
+<div class="box">
+  <h3>my bids</h3>
+  <br>
+  <p><% @current_user_bids.each do |bid| %></p>
+  <p><%  %></p>
   <% end %>
 </div>

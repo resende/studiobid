@@ -1,68 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Adverts</h1>
-<button class="standard-button"> <%= link_to 'Home', root_path  %></button>
+<!-- <h1>Listing Adverts</h1> -->
 
-    <% @adverts.each do |advert| %>
-    <dialog id="myDialog">This is a dialog window</dialog>
-        <p><%= advert.name %></p>
-        <p><%= image_tag advert.avatar %></p>
-        <p><%= advert.availability %></p>
+<!-- home button -->
 
-     <%= link_to 'More Info', advert, class: "btn btn-default"%>
+<button class="btn btn-primary"> <%= link_to 'Home', root_path  %></button>
+
+
+<% @adverts.each do |advert| %>
+  <dialog id="myDialog">This is a dialog window</dialog>
+  <p><%= advert.name %></p>
+  <p><%= image_tag advert.avatar %></p>
+  <p><%= advert.availability %></p>
      
-    <% end %>
+  <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-<%= advert.id%>">
+    More Info
+   </button>
 
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      More Info
-    </button>
-
-    <!-- Adveert show page modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby=   "myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-             <% @adverts.each do |advert| %>
-             <h4 class="modal-title" id="myModalLabel"><%= advert.name %></h4>
-             <% end %> 
-          </div>
-          <div class="modal-body">
-            <p> Advert listing info here </p>
-            <% @adverts.each do |advert| %>
-            <p><%= advert.name %></p>
-             <p><%= advert.sector %></p>
-             <p><%= advert.address %></p>
-             <p><%= image_tag advert.avatar %></p>
-             <p><%= advert.size %></p>
-             <p><%= advert.facilities %></p>
-             <p><% advert.seller_id %></p>
-             <p><%= advert.date_time %></p>
-             <p><%= advert.availability %></p>
-             <div class='bid-form'>
-               <input type="number" id="new-bid-amount" placeholder="Enter bid...">
-               <button class="submit-bid-button btn btn-default disabled" data-advert-id=<%= advert.id %>>Submit Bid</button>
-             </div>
-            <% end %> 
-          </div>
-          <div class="modal-footer">
+  <!-- Advert show page modal -->
+  <div class="modal fade" id="myModal-<%= advert.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel"><%= advert.name %></h4>
+        </div>
+        <div class="modal-body">
+           <p>Sector: <%= advert.sector %></p>
+           <p>Address: <%= advert.address %></p>
+           <p>Image: <%= image_tag advert.avatar %></p>
+           <p>Size: <%= advert.size %></p>
+           <p>Facilities: <%= advert.facilities %></p>
+           <p><% advert.seller_id %></p>
+           <p>Times: <%= advert.date_time %></p>
+           <p>Availability: <%= advert.availability %></p>
+           <div class='bid-form'>
+             <input type="number" id="new-bid-amount" class="new-bid-amount-<%= advert.id %>" placeholder="Enter bid...">
+             <button class="submit-bid-button btn btn-default disabled" data-advert-id=<%= advert.id %>>Submit Bid</button>
+           </div>
+        </div>
+        <div class="modal-footer">
           <% if user_signed_in? %> 
              <button class="new-bid">Make an offer</button>
           <% else %> 
             <button><%= link_to 'Make an offer', new_user_session_path %></button>
-          <% end %> 
-
-          <div class='bid-form'>
-          
-            <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-          </div>
+          <% end %>
+        </div>
+        <div class='bid-form'>      
+          <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
         </div>
       </div>
     </div>
-
-  
-
-
-<% link_to 'New Advert', new_advert_path %>
+  </div>
+<% end %> 
