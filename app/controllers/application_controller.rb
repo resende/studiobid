@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+    def index
+      @users = User.all
+    end
+
+    def dashboard 
+      # binding.pry
+      @users = current_user.id
+      @current_user_adverts = Advert.where(seller_id: current_user.id)
+      @current_user_bids = Bid.where(client_id: current_user.id )
+    end
+  
   
   # def index
   #   if user_signed_in?

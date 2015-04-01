@@ -26,10 +26,11 @@
   <li><class="" data-toggle="modal" data-target=".bs-example-modal-sm">Search</li>
 
   <li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">About</a>
+  
   </li>
-  <li><a href="#">Hello.........</a>
+  <li><a href="#"><li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg4">Dashboard</a></a>
     <ul>
-      <li><class="jeremy"><img src="jeremy.png"></li>
+      <li><p>dasboard contents</p>
     </ul>
   </li>
 </ul>
@@ -197,18 +198,57 @@
 
   <%= render "devise/shared/links" %>
   <%= link_to 'Have a look around', adverts_path %>
-
-  </div>
   <% end %>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
 
   <!-- Dasboard modal -->
-  
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+<!-- 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg4">dashboard</button> -->
 
   <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg4">
       <div class="modal-content">
-        Dashboard contents
+       <div class="dashboard-main">
+       <div class="dashboard-title">
+       <% @users.each do |user| %>
+       <% end %> 
+       <h4> welcome <%= current_user.name %> </h4> 
+       </div>
+
+
+       <div class="box">
+
+          <% @current_user.name %>
+          <br> 
+          <% @current_user.email %>
+          <button class="dash-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
+          <button class="dash-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+         <button class="dash-button"><%= link_to 'Search', welcomes_search_path %></button>
+         <button class="dash-button"><%= link_to 'View Adverts', adverts_path  %></button>
+         <button class="dash-button"><%= link_to 'New Advert', new_advert_path  %></button>
+         <button class="dash-button"><%= link_to 'tbc', new_advert_path  %></button>
+       </div>
+
+         <% @current_user_adverts.each do |advert| %>
+         <div class="bid-box">
+         <ul class="bid-select"></ul>
+           <li>NEW BID</li>
+           <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
+           <li><% advert.bids.each do |bid| %>
+           <li class="idv-bid">Bid: £<%=bid.amount %></li>
+           <button class="accept" data-id=<%= bid.id %>>Accept</button>
+           <button class="reject" data-id=<%= bid.id %>>Reject</button>
+           <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
+         <% end %>
+         </div>
+         <% end %>
+       </div>
       </div>
     </div>
   </div>
