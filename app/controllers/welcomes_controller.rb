@@ -1,13 +1,13 @@
 class WelcomesController < ApplicationController
 
-  def index
-    if user_signed_in?
-      # render dashboard
-      redirect_to welcomes_dashboard_path
-    else
-      render "index"
-    end
-  end 
+  # def index
+  #   if user_signed_in?
+  #     # render dashboard
+  #     redirect_to welcomes_dashboard_path
+  #   else
+  #     render "index"
+  #   end
+  # end 
 
   def dashboard 
     # binding.pry
