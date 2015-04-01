@@ -4,11 +4,11 @@
 
 <!-- home button -->
 
-<button class="dash-button"> <%= link_to 'Home', root_path  %></button>
+<button class="advert-index-home"> <%= link_to 'Home', root_path  %></button>
 
 
 <% @adverts.each do |advert| %>
-<div class="ad-box">
+<div class="ad-preview-box">
   <dialog id="myDialog">This is a dialog window</dialog>
   <p><%= advert.name %></p>
   <p><%= image_tag advert.avatar %></p>

@@ -1,5 +1,7 @@
 <!-- HOME PAGE  -->
 
+<h1 class="main-title"> studio bid </h1>
+
 <!-- Menu sidebar  -->
 
 <div id="menu-toggle">
@@ -28,11 +30,14 @@
   <li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">About</a>
   
   </li>
-  <li><a href="#"><li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg4">Dashboard</a></a>
-    <ul>
-      <li><p>dasboard contents</p>
-    </ul>
-  </li>
+  <% if current_user %> 
+    <li><a href="#"><li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg4">Dashboard</a></a>
+      <ul>
+        <li><p>dasboard contents</p>
+      </ul>
+
+    </li>
+  <% end %> 
 </ul>
 
 
@@ -75,15 +80,16 @@
      </div>
    </div>
 </div>
+
  <!-- search modal -->
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
     <div class="search">
-    SEARCH BOX GOES HERE 
-    <li><button class="dash-button"> <%= link_to 'Back', root_path  %></button></li>
-    </ul>
+    <input placeholder="search"></input> 
+    <br>
+   <!--  <button class="dash-button"> <%= link_to 'Back', root_path  %></button> -->
     </div>
   </div>
 </div>
@@ -206,52 +212,54 @@
 </div>
 
 
+<!-- Dasboard modal -->
 
-  <!-- Dasboard modal -->
-<!-- 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg4">dashboard</button> -->
 
+<% if current_user %>
   <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg4">
       <div class="modal-content">
-       <div class="dashboard-main">
-       <div class="dashboard-title">
-       <% @users.each do |user| %>
-       <% end %> 
-       <h4> welcome <%= current_user.name %> </h4> 
-       </div>
+      <div class="dashboard-modal">
+      <h2> Dashboard </h2>
 
+      <!-- dashboard contents -->
 
-       <div class="box">
-
-          <% @current_user.name %>
-          <br> 
-          <% @current_user.email %>
-          <button class="dash-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
-          <button class="dash-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
-         <button class="dash-button"><%= link_to 'Search', welcomes_search_path %></button>
-         <button class="dash-button"><%= link_to 'View Adverts', adverts_path  %></button>
-         <button class="dash-button"><%= link_to 'New Advert', new_advert_path  %></button>
-         <button class="dash-button"><%= link_to 'tbc', new_advert_path  %></button>
-       </div>
-
-         <% @current_user_adverts.each do |advert| %>
-         <div class="bid-box">
-         <ul class="bid-select"></ul>
-           <li>NEW BID</li>
-           <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
-           <li><% advert.bids.each do |bid| %>
-           <li class="idv-bid">Bid: £<%=bid.amount %></li>
-           <button class="accept" data-id=<%= bid.id %>>Accept</button>
-           <button class="reject" data-id=<%= bid.id %>>Reject</button>
-           <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
-         <% end %>
-         </div>
-         <% end %>
-       </div>
+      <div class="dashboard-main">
+      <div class="dashboard-title">
+      <h4> welcome <%= current_user.name %> </h4> 
       </div>
-    </div>
-  </div>
 
 
-<footer></footer>
+      <div class="box">
+
+         <% @current_user.name %>
+         <br> 
+         <% @current_user.email %>
+         <class="dash-button"><%= link_to 'Edit Account',edit_user_registration_path %>
+         <class="dash-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <class="dash-button"><%= link_to 'Search', welcomes_search_path %>
+        <class="dash-button"><%= link_to 'View Adverts', adverts_path  %>
+        <class="dash-button"><%= link_to 'New Advert', new_advert_path  %>
+      </div>
+
+        <% @current_user_adverts.each do |advert| %>
+        <div class="bid-box">
+        <ul class="bid-select"></ul>
+          <li>NEW BIDS</li>
+          <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
+          <li><% advert.bids.each do |bid| %>
+          <li class="idv-bid">Bid: £<%=bid.amount %></li>
+          <button class="accept" data-id=<%= bid.id %>>Accept</button>
+          <button class="reject" data-id=<%= bid.id %>>Reject</button>
+          <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
+        <% end %>
+        </div>
+        <% end %>
+      </div>
+
+   <!--    dashboard contents  -->
+      </div>
+      </div>
+<% end %>
+<!-- FOOTER  -->
+

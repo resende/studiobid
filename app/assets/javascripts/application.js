@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 $(document).ready(function() {
      $("body").css("display", "none");
-     $("body").fadeIn(500);
+     $("body").fadeIn(100);
  });
 
 

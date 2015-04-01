@@ -4,63 +4,64 @@
       <h2><%= pluralize(@advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
 
       <ul>
-      <% @advert.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @advert.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-<% if user_signed_in? %> 
+  <% if user_signed_in? %> 
 
- <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :sector %><br>
-    <%= f.text_field :sector %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :postcode %><br>
-    <%= f.text_field :postcode %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :facilities %><br>
-    <%= f.text_field :facilities %>
-  </div>
-  <div class="field">
-    <% f.label :seller_id %><br>
-    <%= f.hidden_field :seller_id, value: current_user.id %>
-  </div>
-  <div class="field">
-    <%= f.label :date_time %><br>
-    <%= f.datetime_select :date_time %>
-  </div>
-  <div class="field">
-    <%= f.label :availability %><br>
-    <%= f.text_field :availability %>
-  </div>
-  <div class="field">
-  <%= f.label :avatar %><br>
-  <%= f.file_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  
+    <div class="advert-new-form">
+
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :sector %><br>
+        <%= f.text_field :sector %>
+      </div>
+      <div class="field">
+        <%= f.label :address %><br>
+        <%= f.text_field :address %>
+      </div>
+      <div class="field">
+        <%= f.label :postcode %><br>
+        <%= f.text_field :postcode %>
+      </div>
+      <div class="field">
+        <%= f.label :size %><br>
+        <%= f.text_field :size %>
+      </div>
+      <div class="field">
+        <%= f.label :facilities %><br>
+        <%= f.text_field :facilities %>
+      </div>
+      <div class="field">
+        <% f.label :seller_id %><br>
+        <%= f.hidden_field :seller_id, value: current_user.id %>
+      </div>
+      <div class="field">
+        <%= f.label :date_time %><br>
+        <%= f.datetime_select :date_time %>
+      </div>
+      <div class="field">
+        <%= f.label :availability %><br>
+        <%= f.text_field :availability %>
+      </div>
+      <div class="field">
+        <%= f.label :avatar %><br>
+        <%= f.file_field :avatar %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   <% else %> 
-
-
 
   <% end %> 
 
 <% end %>
+

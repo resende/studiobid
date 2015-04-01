@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
     def dashboard 
       # binding.pry
+      @current_user = current_user 
       @users = current_user.id
       @current_user_adverts = Advert.where(seller_id: current_user.id)
       @current_user_bids = Bid.where(client_id: current_user.id )
