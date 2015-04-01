@@ -1,4 +1,6 @@
-<!-- menu sidebar  -->
+<!-- HOME PAGE  -->
+
+<!-- Menu sidebar  -->
 
 <div id="menu-toggle">
   <div id="menu-icon">
@@ -24,18 +26,6 @@
   <li><class="" data-toggle="modal" data-target=".bs-example-modal-sm">Search</li>
 
   <li><class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">About</a>
-    <!-- <ul>
-      <li></li> -->
-      <!-- <li><a href="#">hello.......</a></li> -->
-
-      <!-- <li><a href="#">Got kids of my own...hello???</a> -->
- <!--        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </li> -->
-    <!-- </ul> -->
   </li>
   <li><a href="#">Hello.........</a>
     <ul>
@@ -45,45 +35,24 @@
 </ul>
 
 
-<!-- Main buttons on hire or sell buttons -->
+<!-- Main page buttons on hire or sell buttons -->
 
 <div id="page-content">
-<!--   <h1>studio bid....</h1> -->
     <ul>
-      <li><button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %>
+      <li><button class="mainpage-button"><%= link_to 'I need to hire space', adverts_path  %>
       </button></li>
       <% if user_signed_in? %> 
-      <li><button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %>
+      <li><button class="mainpage-button"><%= link_to 'I have space to hire', new_advert_path %>
       </button></li>
       <% else %> 
-      <li><button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button></li>
+      <li><button class="mainpage-button"><%= link_to 'I have space to hire', new_user_session_path %></button></li>
     </ul>
     <% end %> 
   </div>
 </div>
 
 
-
-<!-- old main page code -->
-
-<!-- <h1 class="main-title"><%= link_to 'studio bid', root_path %></h1> -->
-
-<!-- <div class="main-page-buttons">
-<ul class="menu-options">
-  <% if current_user %>
-   <%= current_user.email %>
-   <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
-   <% else %>
-    <li><button class="dash-button"><%= link_to "Sign In", new_user_session_path %></button></li>
-    <li><button class="dash-button"><%= link_to "Register", new_user_registration_path %></button></li>
-    <% end %>  -->  
-
-
-<!-- about modal -->
-
-<!-- <li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-lg">about</button></li> -->
-
-<!-- about modal -->
+<!-- About modal -->
 
  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog modal-lg">
@@ -104,12 +73,7 @@
     
      </div>
    </div>
- 
 </div>
-<!-- search modal -->
-<!-- <li><button type="button" class="dash-button" data-toggle="modal" data-target=".bs-example-modal-sm">search</button></li>
- -->
-
  <!-- search modal -->
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -123,17 +87,16 @@
 </div>
 </div>
 
+<!-- sign in modal -->
 
-<!-- 
-  <div class="main-buttons">
-    <ul>
-      <li><button class="hire-space"><%= link_to 'I need to hire space', adverts_path  %>
-      </button></li>
-      <% if user_signed_in? %> 
-      <li><button class="space-hire"><%= link_to 'I have space to hire', new_advert_path %>
-      </button></li>
-      <% else %> 
-      <li><button class="space-hire"><%= link_to 'I have space to hire', new_user_session_path %></button></li>
-    </ul>
-    <% end %> 
-  </div> -->
+<button type="button" class="btn btn-primary2" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+<footer></footer>

@@ -528,6 +528,38 @@ display: inline-table;
 }*/
 /*modal sing in */
 
+/*MAIN PAGE BUTTONS*/
+
+.mainpage-button  {
+     width: 250px;
+     height: 80px;
+     border: 5.5px solid hotpink;
+     background-color: white; 
+     margin: 5px; 
+     color: white; 
+     background: transparent;
+     float: center;
+}
+
+.mainpage-button a {
+ 
+  text-decoration: none;
+  font-size: 18px; 
+}
+
+.mainpage-button ul {
+  list-style: none; 
+  text-decoration: none;
+  font-size: 18px; 
+}
+
+.page-content {
+
+  width: 500px;
+  height: 500px;
+
+
+}
 /*advert modal */
 * {
   -webkit-box-sizing:border-box;
@@ -550,10 +582,12 @@ body {
   padding:45px 0 0 0;
   overflow-x:hidden;
   overflow-y:scroll;
+  
 
 }
 
-/* MENU TOGGLE STYLES */
+/*SIDE BAR MENU*/
+
 
 #menu-toggle {
   position:fixed;
