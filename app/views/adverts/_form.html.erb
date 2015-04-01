@@ -44,15 +44,15 @@
         <%= f.hidden_field :seller_id, value: current_user.id %>
       </div>
       <div class="field">
-        <%= f.label :date_time %><br>
-        <%= f.datetime_select :date_time %>
+        <% f.label :date_time %><br>
+        <% f.datetime_select :date_time %>
       </div>
       <div class="field">
         <%= f.label :availability %><br>
         <%= f.text_field :availability %>
       </div>
       <div class="field">
-        <%= f.label :avatar %><br>
+        <strong>Image:</stong><% f.label :avatar %><br>
         <%= f.file_field :avatar %>
       </div>
       <div class="actions">
