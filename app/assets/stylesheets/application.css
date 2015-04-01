@@ -528,6 +528,18 @@ display: inline-table;
 }*/
 /*modal sing in */
 
+/*DEVISE MODALS */
+
+.new-session {
+  text-align: center;
+  padding: 10px; 
+  
+}
+
+.modal-content {
+  border: 6px hotpink;
+}
+
 /*MAIN PAGE BUTTONS*/
 
 .mainpage-button  {
@@ -582,7 +594,7 @@ body {
   padding:45px 0 0 0;
   overflow-x:hidden;
   overflow-y:scroll;
-  
+
 
 }
 
