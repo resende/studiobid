@@ -16,21 +16,34 @@
 
 body {
 
-/*background-image: url(production-lighting.jpg);*/
-background-size: 100% 100%;
+background-color: blue; 
+background-image: url(NewYork.jpg);
+/*background-size: 100% 100%;*/
 display: none; 
 z-index: 999; 
 height: 2000px; 
 
 }
 
+footer { 
+width: 100%;
+height: 600px;
+position: fixed;
+float: bottom;
+z-index: 999;  
+}
+
 /*DASHBOARD MODAL */
 
 .dash-button {
-  color: blue; 
+  color: hotpink ; 
   width: 70px; 
   height: 40px; 
-  border: solid hotpink 1px;
+  border: solid hotpink  3px;
+  list-style-type: none; 
+  text-decoration: none;
+  margin-bottom: 5px; 
+  background: transparent;
 
 }
 
@@ -50,12 +63,15 @@ height: 600px;
 border: solid hotpink 6px;
 margin-left: 400px; 
 text-align: center;
-padding: 10px
+padding: 10px;
+background: white;
+
 }
 
 .advert-new-form-button {
   text-align: center;
   margin-left: 620px; 
+
 }
 
 /*ADVERT INDEX PAGE */
@@ -63,7 +79,7 @@ padding: 10px
 .advert-index-home {
  text-align: center;
  padding: 10px; 
- border: solid hotpink 6px;
+ border: solid hotpink 3px;
  list-style: none; 
  text-decoration: none;
  width: 10%; 
@@ -74,11 +90,13 @@ padding: 10px
 
 .ad-preview-box {
 
-  border: solid #E5E4E2 6px;
+  border: solid hotpink  4px;
   width: 50%;
+  height: 500px; 
   margin: 10px;
   margin-left: 300px;  
   text-align: center;
+  margin-bottom: 10px
 
 }
 
@@ -95,6 +113,8 @@ margin-right: 15px;
 /*z-index: 999;*/
 text-align: right;
 position: fixed ;
+font-size: 26px;
+color: white;  
 }
 
 
@@ -179,8 +199,8 @@ text-decoration: none;
 /*MAIN PAGE BUTTONS*/
 
 .mainpage-button  {
-   width: 250px;
-   height: 80px;
+   width: 350px;
+   height: 100px;
    border: 5.5px solid hotpink;
    background-color: white; 
    margin: 5px; 
@@ -190,11 +210,15 @@ text-decoration: none;
 
 }
 
+.mainpage-button:hover { 
+    background-color: #191919;
+}
+
 .mainpage-button a {
   text-decoration: none;
-  font-size: 18px; 
+  font-size: 36px; 
   text-decoration: none;
-  color: black; 
+  color: white; 
 }
 
 .mainpage-button ul, li {

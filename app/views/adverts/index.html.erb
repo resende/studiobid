@@ -10,13 +10,13 @@
 <% @adverts.each do |advert| %>
 <div class="ad-preview-box">
   <dialog id="myDialog">This is a dialog window</dialog>
-  <p><%= advert.name %></p>
-  <p><%= image_tag advert.avatar %></p>
-  <p><%= advert.availability %></p>
+  <p>Business name: <%= advert.name %></p>
+  <p>Picture: <%= image_tag advert.avatar %></p>
+  <p>Availability: <%= advert.availability %></p>
 
   <!-- Button trigger modal -->
    <button type="button" class="dash-button" data-toggle="modal" data-target="#myModal-<%= advert.id%>">
-    More Info
+    info
    </button>
    
   <!-- Advert show page modal -->
@@ -47,11 +47,11 @@
           <% if user_signed_in? %> 
              <button class="new-bid">Make an offer</button>
           <% else %> 
-            <button><%= link_to 'Make an offer', new_user_session_path %></button>
+            <class="dash-button"><%= link_to 'Make an offer', new_user_session_path %>
           <% end %>
         </div>
         <div class='bid-form'>      
-          <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>        
+          <button type="button" class="dash-button" data-dismiss="modal">Back</button>        
           </div>
         </div>
       </div>
