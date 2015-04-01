@@ -57,7 +57,7 @@
  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
    <div class="modal-dialog modal-lg">
      <div class="modal-content">
-      
+      <div class="about">
        <h2> how it works </h2>
 
        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis praesentium nisi in iure perferendis, modi consequuntur aliquam alias ea ipsum debitis cupiditate maxime enim at suscipit labore consequatur, eum quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aut tenetur voluptas, ut, tempore perferendis enim harum praesentium itaque labore doloremque veniam vero dicta. Saepe dolorem nisi accusantium! Quis, provident? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio aliquid asperiores perferendis, dolore mollitia, repellendus nulla et libero nostrum at ab ad ea modi unde ducimus alias obcaecati, reprehenderit minima?</p>
@@ -70,7 +70,7 @@
     
     <li><button class="dash-button"> <%= link_to 'Back', root_path  %></button></li>
     <li><button class="dash-button"><%= link_to "Register", new_user_registration_path %></button></li>
-    
+    </div>
      </div>
    </div>
 </div>
@@ -79,11 +79,13 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
+    <div class="search">
     SEARCH BOX GOES HERE 
     <li><button class="dash-button"> <%= link_to 'Back', root_path  %></button></li>
     </ul>
     </div>
   </div>
+</div>
 </div>
 </div>
 
@@ -95,7 +97,7 @@
   <div class="modal-dialog modal-lg2">
     <div class="modal-content">
   
-  <div class="new-session">
+  <div class="new-session-modal">
   <h2>log in</h2>
 
   <div class="login">
@@ -136,8 +138,8 @@
   <div class="modal-dialog modal-lg3">
     <div class="modal-content">
   
-  <div class="new-session">
-  <div class='registration-form'>
+  <div class="new-session-modal">
+  <div class='registration-form-modal'>
 
   <h3>Sign up</h3>
 
@@ -145,46 +147,46 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <% f.label :name %><br />
+      <%= f.text_field :name, placeholder: 'name' %>
     </div>
 
     <div class="field">
-      <%= f.label :profession %><br />
-      <%= f.text_field :profession %>
+      <% f.label :profession %><br />
+      <%= f.text_field :profession, placeholder: 'profession' %>
     </div>
 
     <div class="field">
-      <%= f.label :postcode %><br />
-      <%= f.text_field :postcode %>
+      <% f.label :postcode %><br />
+      <%= f.text_field :postcode, placeholder: 'postcode' %>
     </div>
 
     <div class="field">
-      <% f.label :role %> <b>Do you need studio space, or want to hire yours?</b> <br />
+      <% f.label :role %> <!-- <b>Do you need studio space, or want to hire yours?</b> <br --> 
       <%= f.select :role, options_for_select(['select','seller', 'buyer']) %>
    </div>
 
     <div class="field">
       Image<% f.label :avatar %><br>
-      <%= f.file_field :avatar %>
+      <%= f.file_field :avatar  %>
     </div>
     
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <% f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, placeholder: 'email' %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <% f.label :password %>
       <% if @validatable %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: 'password' %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <% f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 're-enter password' %>
     </div>
     
 

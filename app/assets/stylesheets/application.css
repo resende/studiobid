@@ -530,14 +530,62 @@ display: inline-table;
 
 /*DEVISE MODALS */
 
+input {
+ text-align:center;
+}
+/*.actions {
+  height: 10px;
+  width: 20px;
+  text-align:center;
+  border: solid hotpink 6px;
+
+}*/
+.new-session-modal {
+  text-align: center;
+  padding: 10px; 
+  border: solid hotpink 6px;
+  list-style: none; 
+  text-decoration: none;
+}
+
 .new-session {
   text-align: center;
   padding: 10px; 
-  
+  border: solid hotpink 6px;
+  list-style: none; 
+  text-decoration: none;
+  width: 30%; 
+  margin-left: 440px; 
 }
 
-.modal-content {
-  border: 6px hotpink;
+.registration-form {
+  text-align: center;
+  padding: 10px; 
+  border: solid hotpink 6px;
+  list-style: none; 
+  text-decoration: none;
+  width: 30%; 
+  margin-left: 440px; 
+}
+
+/*ABOUT MODAL*/
+
+.about {
+text-align: center;
+padding: 10px; 
+border: solid hotpink 6px;
+list-style: none; 
+text-decoration: none;
+}
+
+/*SEARCH MODAL */
+
+.search {
+text-align: center;
+padding: 10px; 
+border: solid hotpink 6px;
+list-style: none; 
+text-decoration: none;
 }
 
 /*MAIN PAGE BUTTONS*/
