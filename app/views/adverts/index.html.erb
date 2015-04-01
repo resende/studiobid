@@ -11,7 +11,7 @@
 <% @adverts.each do |advert| %>
 <div class="ad-preview-box">
   <dialog id="myDialog">This is a dialog window</dialog>
-  <p><%= advert.name %></p>
+  <p class="advert-title-text"><%= advert.name %></p>
   <p><%= image_tag advert.avatar, :size => "500x350"  %></p>
   <p>Availability: <%= advert.availability %></p>
 
@@ -32,7 +32,7 @@
         <div class="modal-body">
            <p>Sector: <%= advert.sector %></p>
            <p>Address: <%= advert.address %></p>
-           <p>Image: <%= image_tag advert.avatar %></p>
+           <p><%= image_tag advert.avatar, :size => "450x200" %></p>
            <p>Size: <%= advert.size %></p>
            <p>Facilities: <%= advert.facilities %></p>
            <p><% advert.seller_id %></p>
