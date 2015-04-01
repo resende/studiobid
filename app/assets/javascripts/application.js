@@ -50,12 +50,10 @@ $(document).ready(function(){
 
 /// new bid form ///
 
-
-
-$(document).ready(function() {
-     $("body").css("display", "none");
-     $("body").fadeIn(100);
- });
+// $(document).ready(function() {
+//      $("body").css("display", "none");
+//      $("body").fadeIn(5000);
+//  });
 
 
 submitBid = function(advertId, amount) {

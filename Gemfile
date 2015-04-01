@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
+# ruby '2.0.0'
 
 gem 'devise'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
-gem 'carrierwave'
-
+gem 'carrierwave', '0.9.0'
+gem 'rails_12factor'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
