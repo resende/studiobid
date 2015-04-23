@@ -1,42 +1,55 @@
-<div class="dashboard-main">
-<div class="dashboard-title">
-<h4> welcome <%= current_user.name %> </h4> 
+<div class="dashboard-background">
+<!--   <h1 class="main-title"><a> <%= link_to 'studio bid', root_path %></a> </h1> -->
+
+  
+<div class="main-container">
+
+
+     <div class="my-details">
+       
+       <h4>Welcome <%= @current_user.name %></h4><% @current_user.email %></p>
+       <div class="dashboard-buttons"><span class="btn btn-small submit"><%= link_to 'Home', root_path  %></span>
+       <span class="btn btn-small submit"><%= link_to 'Edit Account',edit_user_registration_path %></span>
+       <span class="btn btn-small submit"><%= link_to "Log out", destroy_user_session_path, method: :delete %></span>
+       <span class="btn btn-small submit"><%= link_to 'Search', welcomes_search_path %></span>
+       <span class="btn btn-small submit"><%= link_to 'View Adverts', adverts_path  %></span>
+      </div>
+     </div> 
+
+
+
+
+
+     <div class="my-adverts">
+       <h3>My Adverts</h3>
+       <% @current_user_adverts.each do |advert| %>
+       <button class="btn btn-small submit"> Edit My Advert </button>Advert Name: <%= advert.name %>
+
+       <% end %>
+     </div>
+
+
+    <div class="my-bids">
+      <h3> My Bids </h3>
+    
+     
+      <% @current_user_adverts.each do |advert| %>
+        <% advert.bids.each do |bid| %>
+          <div class="current-bid">
+              <div class="bid">
+              Advert: <%= advert.name %>
+              <br>
+              Bid: £<%=bid.amount %>
+              Date made: <%= advert.created_at.to_formatted_s(:short) %>
+            
+              <button class="accept" data-id=<%= bid.id %>>Accept</button>
+              <button class="reject" data-id=<%= bid.id %>>Reject</button>
+              </div>
+          </div> 
+        <% end %>
+      <% end %>
+   </div>
 </div>
 
 
-<div class="box">
 
-   <% @current_user.name %>
-   <br> 
-   <% @current_user.email %>
-   <button class="dash-button"><%= link_to 'Edit Account',edit_user_registration_path %></button> 
-   <button class="dash-button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
-  <button class="dash-button"><%= link_to 'Search', welcomes_search_path %></button>
-  <button class="dash-button"><%= link_to 'View Adverts', adverts_path  %></button>
-  <button class="dash-button"><%= link_to 'New Advert', new_advert_path  %></button>
-  <button class="dash-button"><%= link_to 'tbc', new_advert_path  %></button>
-</div>
-
-  <% @current_user_adverts.each do |advert| %>
-  <div class="bid-box">
-  <ul class="bid-select"></ul>
-    <li>NEW BID</li>
-    <li><strong>Studio Name: <%= advert.name %></strong></ul></li>
-    <li><% advert.bids.each do |bid| %>
-    <li class="idv-bid">Bid: £<%=bid.amount %></li>
-    <button class="accept" data-id=<%= bid.id %>>Accept</button>
-    <button class="reject" data-id=<%= bid.id %>>Reject</button>
-    <li class="idv-date">Date made: <%= advert.created_at.to_formatted_s(:short) %><li>
-  <% end %>
-  </div>
-  <% end %>
-</div>
-
-<!-- <div class="box">
-  <h3>my bids</h3>
-  <br>
-  <p><% @current_user_bids.each do |bid| %></p>
-  <p><%  %></p>
-  <% end %>
-</div>
-</div> -->

@@ -15,6 +15,7 @@ class AdvertsController < ApplicationController
   # GET /adverts/new
   def new
     @advert = Advert.new
+    # redirect_to welcomes_dashboard_path 
   end
 
   # GET /adverts/1/edit

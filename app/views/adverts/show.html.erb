@@ -1,3 +1,6 @@
+<button class="advert-index-home"> <%= link_to 'Back', root_path  %></button>
+<div=class"advert-show">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -41,10 +44,10 @@
   <!-- <img src="/uploads/advert/avatar/18/500error_image.jpg" alt=""> -->
 </p>
 
-<p>
+<!-- <p>
   <strong>Date time:</strong>
   <%= @advert.date_time %>
-</p>
+</p> -->
 
 <p>
   <strong>Availability:</strong>
@@ -64,3 +67,4 @@
   <button><%= link_to 'Make an offer', new_user_session_path %></button>
 <% end %> 
  <button><%= link_to 'Back', adverts_path %></button> 
+</div>

@@ -16,33 +16,23 @@
 
 body {
   background-image: url(https://s3-eu-west-1.amazonaws.com/ga-studio-bid/NewYork2.jpeg);
-  height: 2000px; 
   padding:45px 0 0 0;
   overflow-x:hidden;
-  overflow-y:scroll;
-  background-color: black; 
 }
 
 footer { 
   width: 100%;
   height: 600px;
-  position: fixed;
   float: bottom;
   z-index: 999;  
 }
 
-/*DASHBOARD MODAL */
 
-.dash-button {
-  color: black ; 
-  width: 70px; 
-  height: 40px; 
-  border: solid black  3px;
-  list-style-type: none; 
-  text-decoration: none;
-  margin-bottom: 5px; 
-  background: transparent;
+input {
+ text-align:center;
 }
+
+/*DASHBOARD MODAL */
 
 /*ADVERTS NEW PAGE */
 
@@ -119,7 +109,6 @@ footer {
   top:0;
   right:0;
   width: 20%; 
-  font-size: 24px; 
   margin-top: 8px; 
   margin-right: 15px;  
   z-index: 999;
@@ -130,18 +119,21 @@ footer {
   text-decoration:none; 
 }
 
-a {
-text-decoration:none;
-list-style-type: none; 
+.main-title a {
+  font-size: 26px;
+  color: white; 
+  list-style-type: none; 
+  text-decoration: none !important; 
 }
 
-button {
- text-decoration:none;
- list-style-type: none; 
+.main-title a:hover {
+  background: transparent;
+  color: hotpink;   
 }
 
-input {
- text-align:center;
+.advert-index-home a:hover {
+  background: transparent;
+  color: hotpink;   
 }
 
 /*MAIN PAGE BUTTONS*/
@@ -155,21 +147,30 @@ input {
   color: white; 
   background: transparent;
   float: center;
+  margin-top: 100px; 
+  text-decoration: none !important; 
 }
 
-a:hover {
-  text-decoration: none;
+a {
   list-style-type: none;  
+  background: transparent;
+  text-decoration: none !important;  
+}
+
+.mainpage-button a:hover {
+  background: transparent;
+  color: hotpink;   
 }
 
 .mainpage-button:hover  { 
-  background-color: #191919;   
+  background-color: transparent; 
+  text-decoration: none !important; 
+ 
 }
 
 .mainpage-button a {
-  text-decoration: none;
-  list-style-type: none; 
   font-size: 36px; 
+  text-decoration: none !important; 
   color: white; 
 }
 
@@ -178,7 +179,6 @@ a:hover {
   text-decoration: none;
   font-size: 18px; 
   text-align: center;
-
 }
 
 .new-session-modal {
@@ -209,6 +209,18 @@ a:hover {
   width: 35%; 
   margin-left: 440px; 
   background-color: white;
+}
+
+.edit-registration-form {
+  text-align: center;
+  padding: 10px; 
+  border: solid hotpink 6px;
+  list-style: none; 
+  text-decoration: none;
+  width: 35%; 
+  margin-left: 440px; 
+  background-color: white;
+  margin-top: -100px; 
 }
 
 /*DASHBOARD MODAL*/
@@ -391,7 +403,6 @@ ul#menu, #menu ul {
 
 #menu {
   background:#222222;
-/*  background: #2B1B17;*/
   width:400px;
   position:fixed;
   top:0;
@@ -425,7 +436,7 @@ ul#menu, #menu ul {
   padding:15px;
   text-decoration:none;
   /*color:#929292;*/
-  color:white;
+  color: hotpink;
 }
 
 #menu a:hover {
@@ -438,7 +449,7 @@ ul#menu, #menu ul {
   bottom:0;
   left:-400px;
   width:355px;
-  background:#333333;
+  background: hotpink;
 }
 
 #menu > .parent > ul > .parent > ul {
@@ -471,7 +482,7 @@ ul#menu, #menu ul {
 }
 
 .submenu-toggle.open {
-  background:rgba(255,255,255,.1);
+  background-color: blue; 
   height:100%;
   z-index:5000;
   top:0;
@@ -522,7 +533,6 @@ ul#menu, #menu ul {
 #menu-overlay {
   position:fixed;
   width:100%;
-/*  background:red;*/
   top:55px;
   bottom:0;
   left:0;
@@ -561,3 +571,168 @@ ul#menu, #menu ul {
   font-size:14px;
   line-height:22px;
 }
+
+/*DASHBOARD STYLING */
+
+.dashboard-background {
+  background-image: url(https://s3-eu-west-1.amazonaws.com/ga-studio-bid/NewYork2.jpeg);
+  padding:45px 0 0 0;
+  overflow-x:hidden;
+  position: fixed;
+}
+
+.main-container {
+  border: solid hotpink 6px;
+  background-color: #FEFBF7; 
+  width: 1000px;
+  height: 600px; 
+  margin-left: 80px; 
+  margin-bottom: 60px; 
+  padding-bottom: 100px;
+  margin-top: -30px; 
+  z-index: 999px; 
+}
+
+.my-details {
+  /*border: solid hotpink 3px;*/
+  padding: 5px;
+  margin: 10px;
+  height: 200px;
+ text-align: center; 
+}
+
+.my-adverts {
+  border: solid hotpink 3px;
+  padding: 5px;
+  margin: 10px;
+  height: 150px;
+}
+
+.my-bids {
+  border: solid hotpink 3px;
+  padding: 5px;
+  margin: 10px;
+  height: 195px;
+}
+
+.dashboard-buttons {
+  float: center;
+  margin-left: 150px;
+}
+
+
+/*dashboard bid buttons*/
+
+.accept {
+ background: hotpink;
+ color: white;
+ text-decoration: none !important; 
+ background-color: green;
+ margin-right: 20px; 
+ margin-bottom: 50px;  
+ float: right;  
+}
+
+.reject {
+  background: hotpink;
+/*  box-shadow: 0px 5px gray;*/
+  color: white;
+  text-decoration: none !important; 
+  background-color: red; 
+  float: right; 
+}
+
+.current-bid {
+  border: solid black 2px;
+  width: 940px;
+  height: 50px; 
+  margin: 5px; 
+}
+
+.bid {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+/*My Details buttons*/
+
+.btn {
+  float: left;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 7px 11px 0;
+  color: white;
+  text-align: center;
+
+}
+
+
+.btn-medium {
+  line-height: 45px;
+  width: 134px;
+  height: 45px;
+  font-size: 120%;
+}
+
+.btn-large {
+  line-height: 80px;
+  width: 100%;
+  height: 85px;
+  font-size: 160%;
+}
+
+/*==========  Different button styles  ==========*/
+
+.btn-small {
+  line-height: 36px;
+  width: 120px;
+  height: 36px;
+  text-decoration: none !important; 
+  list-style-type: none; 
+}
+
+.btn-small a {
+ list-style-type: none; 
+ text-decoration: none !important; 
+}
+
+.submit {
+  background: hotpink;
+  box-shadow: 0px 5px gray;
+  color: white;
+  text-decoration: none !important; 
+}
+
+.submit:hover {
+  background: pink;
+  box-shadow: 0px 4px gray;
+  color: gray;
+  list-style-type: none; 
+  text-decoration: none !important; 
+}
+.submit:active {
+  box-shadow: 0px 0px gray;
+  top: 4px;
+  list-style-type: none; 
+  text-decoration: none !important; 
+}
+
+/*SEARCH PAGE */
+
+.search-page {
+  text-align: center;  
+}
+
+/* Advert Modal */
+
+.ad-modal {
+  margin-left: 10px;  
+}
+.actions {
+  float: center; 
+  margin-left: 60px; 
+}
+

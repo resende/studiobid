@@ -54,9 +54,13 @@
       <div class="field">
         <strong>Image:</stong><% f.label :avatar %><br>
         <%= f.file_field :avatar %>
-      </div>
-      <div class="actions">
+    
+
+      <div class="btn btn-small submit">
         <%= f.submit %>
+        </div>
+        <button class="btn btn-small submit"><%= link_to 'Cancel', root_path %></button>
+      
       </div>
     </div>
   <% else %> 
@@ -64,3 +68,4 @@
   <% end %> 
 
 <% end %>
+

@@ -21,32 +21,37 @@
 $(document).ready(function(){
   
   // NAVIGATION MENU
-  
-  // menu icon states, opening main nav
-  $('#menu-icon').click(function(){
-    $(this).toggleClass('open');
-    $('#menu,#menu-toggle,#page-content,#menu-overlay').toggleClass('open');
-    $('#menu li,.submenu-toggle').removeClass('open');
-    $('#menu li').removeClass('disabled');
-  });
-  
-  // clicking on overlay closes menu
-  $('#menu-overlay').click(function(){
-    $('*').removeClass('open');
-    $('*').removeClass('disabled');
-  });
-  
+  $(document).click(function(){
+    console.log('clicked doc')
+    // menu icon states, opening main nav
+    $('#menu-icon').click(function(){
+      console.log('click 1');
+      $(this).toggleClass('open');
+      $('#menu,#menu-toggle,#page-content,#menu-overlay').toggleClass('open');
+      // $('#menu li,.submenu-toggle').removeClass('open');
+      $('#menu li,.submenu-toggle').removeClass('disabled');
+    });
+    
+    // clicking on overlay closes menu
+    // $('#menu-overlay').click(function(){
+    //   console.log('click 2')
+    //   $('*').removeClass('open');
+    //   $('*').removeClass('disabled');
+    // });
+    });
+  })
   // add child menu toggles and parent class
-  $('#menu li').has('ul').addClass('parent').prepend('<div class="submenu-toggle">open</div>');
+  // $('#menu li').has('ul').addClass('parent').prepend('<div class="submenu-toggle">open</div>');
   
   // toggle child menus
-  $('.submenu-toggle').click(function(){
-    var currentToggle=$(this);
-    currentToggle.parent().siblings().toggleClass('disabled');
-    currentToggle.parent().toggleClass('open');
-    currentToggle.toggleClass('open');
-  });
-});
+//   $('.submenu-toggle').click(function(){
+//     console.log('click 3')
+//     var currentToggle=$(this);
+//     currentToggle.parent().siblings().toggleClass('disabled');
+//     currentToggle.parent().toggleClass('open');
+//     currentToggle.toggleClass('open');
+//   });
+
 
 /// new bid form ///
 
@@ -112,7 +117,7 @@ $(document).ready(function() {
 
   $(".new-bid").click(function(event) {
     console.log( "key pressed dude");
-    $(".bid-form").css({display: "inline"});
+    // $(".bid-form").css({display: "inline"});
   });
 
   $(".search-button").click(function(event) {
@@ -122,32 +127,42 @@ $(document).ready(function() {
   $(".submit-bid-button").on('click', function() {
     console.log("submit button pressed");
     var advertId = $(this).data('advert-id');
-    var amount = $('.new-bid-amount-' + advertId).val();
+    var amount = $('.new-bid-amount' + advertId).val();
     submitBid(advertId, amount)
     $(".bid-form").css({display: "none"});
   });
 
-  $('body').on('blur', '#new-bid-amount', function(){
-    // console.log($(this).val())
-    if ($(this).val() > 0) {
-      $('.submit-bid-button').removeClass('disabled');
-      //clear entry
-    } else {
-      $(".submit-bid-button").addClass('disabled');
-      //clear entry
-    };
-  })
+  // $('body').on('blur', '#new-bid-amount', function(){
+  //   // console.log($(this).val())
+  //   if ($(this).val() > 0) {
+  //     window.alert('please enter amount')
+  //     console.log("disabled")
+  //     // $('.submit-bid-button').removeClass('disabled');
+  //     //clear entry
+  //   } else {
+  //     $(".submit-bid-button").addClass('disabled');
+  //     //clear entry
+  //   };
+  // })
 
-  $(".accept" ).click(function(event) {
-    console.log($(this).data("id"));
-    acceptBid($(this).data("id"));
-
+  $(".accept" ).on("click", function(event) {
+    console.log(this);
+    var container = $(this).parents('.current-bid');
+    container.remove();
+    window.alert("Bid Accepted");
+    // console.log($(this).data("id"));
+    // acceptBid($(this).data("id"));
+    // $(this.parent()).remove(); 
   });
 
   $(".reject" ).click(function(event) {
-    console.log($(this).data("id"));
-    rejectBid($(this).data("id"));
-    $(this).parent().remove();   
+    console.log(this);
+    var container = $(this).parents('.current-bid');
+    container.remove();
+    window.alert("Bid Rejected");
+    // console.log($(this).data("id"));
+    // rejectBid($(this).data("id"));
+    // $(".current-bid").remove(); 
 
   });  
 
@@ -156,5 +171,9 @@ $(document).ready(function() {
     console.log("button clicked!")
   });  
 
+  $(".button").click(function() {
+    $(".active").removeClass("active");
+    $(this).addClass("active");
+  });
  
 });
